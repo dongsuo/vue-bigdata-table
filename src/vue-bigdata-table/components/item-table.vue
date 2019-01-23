@@ -61,7 +61,7 @@
 					:style="{background: currentMouseEnterIndex === index && canSelectText ? '#ebf7ff' : ''}"
 					:class="[stripe && (indexBase + index) % 2 !== 0 ? 'stripe-gray' : '', tr.className, currentScrollToRowIndex === indexBase + index ? 'scroll-to-row-tip' : '', indexBase + index === highlightRowIndex ? 'highlight-row' : '']">
 					<td v-if="showIndex" :class="['vue-bigdata-table-cell', 'vue-bigdata-table-data-table-center']">
-						<render-dom v-if="fixedCol < 0" :render="indexRender" :back-value="(indexBase + index)"></render-dom>
+						<render-dom v-if="fixedCol < 0" :render="indexRender" :back-value="{index: (indexBase + index), params: indexRenderParams}"></render-dom>
 					</td>
 					<td
 						v-for="(td, i) in tr"
